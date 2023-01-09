@@ -16,7 +16,7 @@ createApp({
           this.getProducts();
         })
         .catch((err)=>{
-          alert(err.data.message);
+          alert(err.response.data.message);
           window.location = 'login.html';
         })
     },
@@ -27,7 +27,7 @@ createApp({
               this.products = res.data.products;
           })
           .catch((err)=>{
-            alert(err.data.message);
+            alert(err.response.data.message);
           })
     },
     getDetail(product){

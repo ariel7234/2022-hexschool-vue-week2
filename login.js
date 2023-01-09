@@ -1,11 +1,10 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
 
-const url = "https://vue3-course-api.hexschool.io/v2";
-const path = "yjchen-vue";
 
 createApp({
   data() {
     return {
+      apiUrl: "https://vue3-course-api.hexschool.io/v2",
       user: {
         username: "",
         password: "",
@@ -15,7 +14,7 @@ createApp({
   methods: {
     login() {
       axios
-        .post(`${url}/admin/signin`, this.user)
+        .post(`${this.apiUrl}/admin/signin`, this.user)
         .then((res) => {
           const { token, expired } = res.data;
           // token 寫入 cookie
@@ -23,7 +22,7 @@ createApp({
           window.location = "products.html";
         })
         .catch((err) => {
-          alert(err.data.message);
+          alert(err.response.data.message);
         });
     },
   },
