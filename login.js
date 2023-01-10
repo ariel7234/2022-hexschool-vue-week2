@@ -18,7 +18,7 @@ createApp({
         .then((res) => {
           const { token, expired } = res.data;
           // token 寫入 cookie
-          document.cookie = `hexschool=${token}; expires=${expired};`;
+          document.cookie = `hexToken=${token}; expires=${expired};`;
           window.location = "products.html";
         })
         .catch((err) => {
