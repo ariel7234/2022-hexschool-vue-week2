@@ -23,7 +23,7 @@ createApp({
         })
         .catch((err) => {
           alert(err.data.message);
-        });
+        })
     },
   },
   mounted() {
